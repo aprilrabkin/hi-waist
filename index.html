@@ -1,0 +1,253 @@
+<html lang="en-us">
+<script type="text/javascript" src="./assets/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.js"></script>
+<style>
+@font-face {
+    font-family: Graphik-Medium;
+    src: url('./assets/Graphik-Medium.woff');
+}
+
+@media (min-width:1025px) {
+    .slideshow-container {
+        display: none;
+    }
+    .slideshow-navigation {
+        display: none;
+    }
+}
+
+@media (max-width:1024px) {
+    .product-images-container {
+        display: none !important;
+    }
+}
+</style>
+<style>
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+</style>
+
+<body style="font-family: Graphik-Medium;">
+    <div style="background-color: f8f8f9">
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_back_1024x1024.jpg" style="width:50%">
+            </div>
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_front_5_1024x1024.jpg" style="width:50%">
+            </div>
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_front_2_1024x1024.jpg" style="width:50%">
+            </div>
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_front_3_1024x1024.jpg" style="width:50%">
+            </div>
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_front_4_1024x1024.jpg" style="width:50%">
+            </div>
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_side_1024x1024.jpg" style="width:50%">
+            </div>
+            <div class="mySlides">
+                <img src="./assets/highwaist_black_back_1024x1024.jpg" style="width:50%">
+            </div>
+        </div>
+        <br>
+        <div class="slideshow-navigation" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+        <div class="product-details sticky" style="max-width: 30%; display: inline-block; vertical-align:top; margin-top: 20%; margin-left: 10px">
+            HI-WAIST
+            <br>
+            <br>
+            <br> The phrase "treat yo'self" reaches new belly-button brushing heights with the Hi-Waist, and it's here just in time for cuffing season.
+        </div>
+        <div class="product-images-container" style="width: 30%; display: inline-block;">
+            <picture class="product-image" style="cursor: zoom-in;">
+                <img id="myImg" srcset="./assets/highwaist_black_back_1024x1024.jpg" style="width: 100%;">
+            </picture>
+            <picture id="myModal" class="modal">
+                <img id="img01" class="modal-content">
+            </picture>
+            <picture class="product-image">
+                <img srcset="./assets/highwaist_black_front_5_1024x1024.jpg" style="width: 100%;">
+            </picture>
+            <picture class="product-image">
+                <img srcset="./assets/highwaist_black_front_2_1024x1024.jpg" style="width: 100%;">
+            </picture>
+            <picture class="product-image">
+                <img srcset="./assets/highwaist_black_front_3_1024x1024.jpg" style="width: 100%;">
+            </picture>
+            <picture class="product-image">
+                <img srcset="./assets/highwaist_black_front_4_1024x1024.jpg" style="width: 100%;">
+            </picture>
+            <picture class="product-image">
+                <img srcset="./assets/highwaist_black_side_1024x1024.jpg" style="width: 100%;">
+            </picture>
+        </div>
+        <div class="product-ordering sticky" style="width: 30%; display: inline-block; vertical-align:top; margin-top: 20%;">
+            $35
+            <br>
+            <form style="box-sizing: border-box;">
+                <div class="radio-options mb2">
+                    <label for="Black" class="radio-option  color-black">
+                        black
+                        <input id="Black" type="radio" name="Color" value="Black" checked="">
+                        <span class="radio-option-indicator  fa fa-check"></span>
+                    </label>
+                    <label for="Beige" class="radio-option  color-beige">
+                        beige
+                        <input id="Beige" type="radio" name="Color" value="Beige" data-color="beige">
+                        <span class="radio-option-indicator fa fa-check"></span>
+                    </label>
+                </div>
+                <label for="quantity" class="mb2">
+                    quantity
+                    <input min="1" max="15" step="1" type="number" id="quantity" name="quantity" value="1">
+                </label>
+                <br>
+                <select>
+                    <option value="" disabled="" selected="">size</option>
+                    <option value="XS" class="product-max-price">XS</option>
+                    <option value="S" class="product-max-price">S</option>
+                    <option value="M" class="product-max-price">M</option>
+                    <option value="L" class="product-max-price">L</option>
+                    <option value="XL" class="product-max-price">XL</option>
+                    <option value="XXL" class="product-max-price">XXL</option>
+                    <option value="3XL" class="product-max-price">3XL</option>
+                </select>
+                <br>
+                <a href="#">what's my size?</a>
+                <br>
+                <button type="submit" class="btn btn--secondary  addtocart  u-width-100  mt1  mb2">add to cart</button>
+                <p class="helper-text"><u>Buy a Cycle Set and save </u></p>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+$(".sticky").stick_in_parent();
+
+// TODO: Dry this up and apply it to all images in column on desktop
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+
+img.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.srcset;
+}
+
+// When the user clicks on modal, close it
+modal.onclick = function() {
+    modal.style.display = "none";
+}
+</script>
+<style>
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #f8f8f9;
+    cursor: zoom-out;
+}
+
+
+
+
+
+
+
+
+/* Modal Content (image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 75%; //max-width: 75%;
+}
+</style>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+</script>
+
+</html>

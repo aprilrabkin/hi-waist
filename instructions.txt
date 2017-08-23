@@ -1,0 +1,19 @@
+CODE CHALLENGE INSTRUCTIONS
+
+On laptop/desktop, The top, middle section should appear/work the same as ssense.com products when you browse up and down the page. Please scroll around/up/down and understand how the interaction works. The zoom feature should also work and trigger whatever image you click on to zoom. The feature in your submission should work exactly the same.
+Example: https://www.ssense.com/en-us/women/product/writtenby/navy-floral-knit-sweater/1752513
+
+For mobile/tablet responsiveness, please have everything stack on top of each other in this order:
+Product image carousel (like SSENSE, see link above), product description, product selector form (color, size, etc), extra images on the bottom. (Apologies, but no design provided for this. If you have questions, let me know).
+
+
+All text is static, except two things on the top right section:
+Black/beige should be clickable and the checkmark should appear/disappear like real world use. On page load, Black should be checked.
+Quantity +/-  should work and size dropdown should work as well with sizes XXS-3XL
+
+
+Feel free to use any frameworks or tools you want!
+
+If you have ANY questions, do not hesitate to ask!!
+
+
